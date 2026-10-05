@@ -37,9 +37,8 @@ class THelperFunctions {
   }
 
   static void showSnackBar(String message) {
-    ScaffoldMessenger.of(Get.context!).showSnackBar(
-      SnackBar(content: Text(message)),
-    );
+    ScaffoldMessenger.of(Get.context!)
+        .showSnackBar(SnackBar(content: Text(message)));
   }
 
   static void showAlert(String title, String message) {
@@ -61,10 +60,7 @@ class THelperFunctions {
   }
 
   static void navigateToScreen(BuildContext context, Widget screen) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (_) => screen),
-    );
+    Navigator.push(context, MaterialPageRoute(builder: (_) => screen));
   }
 
   static String truncateText(String text, int maxLength) {
@@ -79,22 +75,22 @@ class THelperFunctions {
     return Theme.of(context).brightness == Brightness.dark;
   }
 
-  static Size screenSize([BuildContext? context]) {
-    final ctx = context ?? Get.context;
-    return ctx != null ? MediaQuery.of(ctx).size : Size.zero;
+  static Size screenSize(BuildContext context) {
+    return MediaQuery.of(context).size;
   }
 
-  static double screenHeight([BuildContext? context]) {
-    final ctx = context ?? Get.context;
-    return ctx != null ? MediaQuery.of(ctx).size.height : 0.0;
+  static double screenHeight(BuildContext context) {
+    return MediaQuery.of(context).size.height;
   }
 
-  static double screenWidth([BuildContext? context]) {
-    final ctx = context ?? Get.context;
-    return ctx != null ? MediaQuery.of(ctx).size.width : 0.0;
+  static double screenWidth(BuildContext context) {
+    return MediaQuery.of(context).size.width;
   }
 
-  static String getFormattedDate(DateTime date, {String format = 'dd MMM yyyy'}) {
+  static String getFormattedDate(
+    DateTime date, {
+    String format = 'dd MMM yyyy',
+  }) {
     return DateFormat(format).format(date);
   }
 
